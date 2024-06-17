@@ -10,7 +10,7 @@ app.use(express.json());
 
 // 엑셀 파일의 데이터 제공
 app.get('/data', (req, res) => {
-  const filePath = path.join(__dirname, 'assets', '연습.xlsx'); // 상대 경로로 수정
+  const filePath = path.join(__dirname, 'src/assets/연습.xlsx');
   const workbook = xlsx.readFile(filePath);
   const sheetName = workbook.SheetNames[0];
   const worksheet = workbook.Sheets[sheetName];
